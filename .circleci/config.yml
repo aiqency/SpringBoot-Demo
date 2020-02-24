@@ -8,8 +8,6 @@ jobs:
       # specify the version you desire here
       - image: circleci/openjdk:8-jdk
 
-      - image: postgres:9.6
-
     working_directory: ~/repo
 
     environment:
