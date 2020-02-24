@@ -20,8 +20,8 @@ The app require a postgres instance running in localhost that can be configured 
     - Tests
         - [Test Containers JPA Integration Test with Docker](src/test/kotlin/com/aiqency/springbootdemo/testcontainer/TcIntegrationTest.kt)
         - [Unsecured Endpoint Testing with @MockMvc & @MockBean](src/test/kotlin/com/aiqency/springbootdemo/MockMvc.kt)
-        - [Test Spring Boot Profile](src/test/kotlin/com/aiqency/springbootdemo/ProfileTest.kt)
         - [Test Auth Token](src/test/kotlin/com/aiqency/springbootdemo/security/JwtAuthTest.kt)
         - [Test Secured Endpoint](src/test/kotlin/com/aiqency/springbootdemo/security/JwtSecuredEndPoint.kt)
+        - [Test Spring Boot Profile](src/test/kotlin/com/aiqency/springbootdemo/ProfileTest.kt)
         - [Configuration Test AssertJ](src/test/kotlin/com/aiqency/springbootdemo/ConfigurationTest.kt)
         - [@LookUp Annotation](src/test/kotlin/com/aiqency/springbootdemo/LookUpTest.kt)
