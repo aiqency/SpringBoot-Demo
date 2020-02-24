@@ -1,6 +1,6 @@
 # SpringBoot, Integration Testing and Jwt Auth
 
-The app require a postgres instance running in localhost that can be configured it in the [application.yml](src/main/resources/application.yml)
+The app require a postgres instance running in localhost that can be configured in the [application.yml](src/main/resources/application.yml)
 ### Backend
 
 - Spring Boot
