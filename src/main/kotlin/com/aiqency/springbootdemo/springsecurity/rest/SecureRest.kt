@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/")
-class SecuredRest {
+class SecureRest {
 
-    @RequestMapping("/secured/isAuth", method = [RequestMethod.GET])
+    @RequestMapping("/secure/isAuth", method = [RequestMethod.GET])
     fun adminIsAuth() = ResponseEntity.ok().build<Void>()
 
 }

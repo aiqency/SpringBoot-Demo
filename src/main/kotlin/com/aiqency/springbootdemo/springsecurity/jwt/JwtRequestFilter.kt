@@ -26,7 +26,7 @@ class JwtRequestFilter: OncePerRequestFilter() {
      * @see [https://www.baeldung.com/manually-set-user-authentication-spring-security]
      */
     override fun doFilterInternal(request: HttpServletRequest, response: HttpServletResponse, filterChain: FilterChain) {
-        request.takeIf { it.requestURI.contains("/secured") }
+        request.takeIf { it.requestURI.contains("/secure") }
                 ?.getHeader("Authorization")
                 ?.takeIf { it.startsWith("Bearer") }
                 ?.split("Bearer ")

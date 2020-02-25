@@ -3,7 +3,7 @@ package com.aiqency.springbootdemo
 import com.aiqency.springbootdemo.rest.Greeting
 import com.aiqency.springbootdemo.rest.Rest
 import com.aiqency.springbootdemo.springsecurity.configuration.WebSecurityConfigurer
-import org.hamcrest.Matchers
+import org.hamcrest.Matchers.*
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito.*
@@ -44,12 +44,12 @@ class MockRestTest {
     private lateinit var service: Greeting
 
     @Test
-    fun greetingShouldReturnMessageFromService() {
+    fun `greeting endpoint`() {
         `when`(service.hello).thenReturn("Hi")
         mockMvc.perform(get("/greeting/world"))
                 .andDo(print())
                 .andExpect(status().isOk)
-                .andExpect(content().string(Matchers.containsString("Hi World!")))
+                .andExpect(content().string(containsString("Hi World!")))
     }
 
 }

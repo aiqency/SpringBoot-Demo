@@ -8,6 +8,9 @@ import org.springframework.context.ApplicationContextInitializer
 import org.springframework.context.ConfigurableApplicationContext
 import org.testcontainers.junit.jupiter.Container
 
+/**
+ * Extend this class in order to test postgres db integration
+ */
 open class BaseTc {
 
     companion object {

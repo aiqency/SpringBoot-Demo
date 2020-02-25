@@ -2,6 +2,8 @@ package com.aiqency.springbootdemo.testcontainer
 
 import com.aiqency.springbootdemo.springdata.model.BookEntity
 import com.aiqency.springbootdemo.springdata.repositories.ReadingListRepositoryInt
+import org.assertj.core.api.Assertions
+import org.assertj.core.api.Assertions.*
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtendWith
@@ -23,17 +25,21 @@ class TcIntegrationTest: BaseTc() {
     @Autowired
     private lateinit var repo: ReadingListRepositoryInt
 
+    val numOfEntitiesAdded = 3
+
     @Test
     fun `postgres container is running ?`(){
         assertTrue(postgresContainer.isRunning)
     }
 
+    /**
+     * Ensure database persistence and [ReadingListRepositoryInt.findByAuthor] fetching method
+     */
     @Test
     fun readingListRepository(){
-        assertTrue(repo.findByAuthor("foo")?.isEmpty() == true)
-        repo.save(BookEntity().apply { author = "foo" })
-        repo.save(BookEntity().apply { author = "foo" })
-        assertTrue(repo.findByAuthor("foo")?.size == 2)
+        assertThat(repo.findByAuthor("foo")).isEmpty()
+        (0 until numOfEntitiesAdded).forEach { _ -> repo.save(BookEntity().apply { author = "foo" }) }
+        assertThat(repo.findByAuthor("foo")).hasSize(numOfEntitiesAdded)
     }
 
 }
