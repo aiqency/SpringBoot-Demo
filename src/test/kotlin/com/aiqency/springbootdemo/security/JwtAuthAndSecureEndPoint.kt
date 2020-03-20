@@ -41,7 +41,7 @@ class JwtAuthAndSecureEndPoint {
      */
     @Test
     fun `login as foo should return authToken`() {
-        val response = mockMvc.perform(post("authUrl")
+        val response = mockMvc.perform(post(authUrl)
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(Gson().toJson(testUser)))
                 .andReturn().response.contentAsString
