@@ -7,7 +7,7 @@ The app require a postgres instance running in localhost, it can be configured h
     - Source code
         - [Spring Security (Jwt Auth)](src/main/kotlin/com/aiqency/springbootdemo/springsecurity)
             - [Auth Endpoint](src/main/kotlin/com/aiqency/springbootdemo/springsecurity/rest/AuthRest.kt) ```username: foo password: foo```
-            - [Secured Endpoint](src/main/kotlin/com/aiqency/springbootdemo/springsecurity/rest/SecuredRest.kt)
+            - [Secured Endpoint](src/main/kotlin/com/aiqency/springbootdemo/springsecurity/rest/SecureRest.kt)
                 ```Authorization : Bearer <Token provided by the auth endpoint>```
         - [Spring Data (JPA)](src/main/kotlin/com/aiqency/springbootdemo/springdata)
         - [Rest Endpoint with Injected Interface DI](src/main/kotlin/com/aiqency/springbootdemo/rest/Rest.kt)
